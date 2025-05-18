@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do List</title>
+ <style>
+
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+
+  #wrapper {
+    width: 420px;
+    padding: 40px 60px;
+    background: radial-gradient(circle at top left, #1e1f26, #141519);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+    animation: fadeInUp 1s ease;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  #wrapper h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #00f0ff;
+    text-shadow: 0 0 8px #00f0ff;
+    margin-bottom: 30px;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 8px blue, 0 0 16px blue;
+    }
+    to {
+      text-shadow: 0 0 12px blue, 0 0 24px blue;
+    }
+  }
+
+  input {
+    width: 400px;
+    padding: 12px 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    outline: none;
+    background-color: #2b2c34;
+    color: #fff;
+    box-shadow: inset 0 0 5px rgba(0, 255, 255, 0.3);
+    transition: box-shadow 0.3s;
+  }
+
+  input:focus {
+    box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #ff00c8, #7928ca);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(255, 0, 200, 0.5);
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    background: linear-gradient(90deg, #7928ca, #ff00c8);
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(255, 0, 200, 0.8);
+  }
+
+  #todoList {
+    margin-top: 25px;
+  }
+
+  #todoList p {
+    padding: 10px 15px;
+    background: linear-gradient(to right, #232526, #414345);
+    border-radius: 8px;
+    margin: 10px 0;
+    font-size: 18px;
+    color: #00fff7;
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: slideIn 0.4s ease;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  #todoList p:hover {
+    background: #2a2d34;
+    color: #ff4dd2;
+    transform: translateX(5px);
+    box-shadow: 0 0 15px #ff00c8;
+  }
+
+  #todoList p.completed {
+    text-decoration: line-through;
+    color: #888;
+    opacity: 0.6;
+    transition: all 0.4s ease;
+  }
+
+  @keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+}
+
+</style>
+
+
+
+
+</head>
+<body>
+  <div id="wrapper">
+    <h2>Todo List</h2>
+    <input type="text" id="input">
+    <button id="add">Add</button>
+    <div id="todoList">
+
+    </div>
+</div>
+ <script src="to-do-scripts.js"></script>
+</body>
+</html>
